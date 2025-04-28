@@ -1,4 +1,3 @@
-
 <!-- 
     Template para exibição da lista de assistidos cadastrados
     Apresenta os dados em formato de tabela com opções de editar e excluir
@@ -202,7 +201,7 @@
                         <td th:text="${assistee.gender}"></td>
                         <td th:text="${assistee.racialIdentity}"></td>
                         <td class="actions">
-                            <a href="./edit.html" class="btn btn-edit">Editar</a>
+                            <a th:href="@{/edit/{cpf}(cpf=${assistee.cpf})}" class="btn btn-edit">Editar</a>
                             <button onclick="handleDelete(this)" th:data-cpf="${assistee.cpf}" class="btn btn-delete">Excluir</button>
                         </td>
                     </tr>
