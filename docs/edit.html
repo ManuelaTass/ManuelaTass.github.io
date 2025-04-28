@@ -1,11 +1,5 @@
-
-<!-- 
-    Template para edição dos dados de um assistido
-    Formulário pré-preenchido com os dados atuais do assistido
-    Permite atualização de todas as informações exceto o CPF
--->
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <title>Editar Assistido - Defensoria Pública</title>
     <meta charset="UTF-8">
@@ -160,35 +154,35 @@
             <form action="./list.html" method="get">
                 <div class="form-group">
                     <label>Nome Completo</label>
-                    <input type="text" th:field="*{fullName}" required>
+                    <input type="text" name="fullName" value="Nome do Assistido" required>
                 </div>
                 <div class="form-group">
                     <label>CPF</label>
-                    <input type="text" th:field="*{cpf}" readonly>
+                    <input type="text" name="cpf" value="123.456.789-00" readonly>
                 </div>
                 <div class="form-group">
                     <label>CEP</label>
-                    <input type="text" th:field="*{cep}" required onkeyup="formatCEP(this)" maxlength="9">
+                    <input type="text" name="cep" value="12345-678" required onkeyup="formatCEP(this)" maxlength="9">
                 </div>
                 <div class="form-group">
                     <label>Logradouro</label>
-                    <input type="text" th:field="*{logradouro}" required>
+                    <input type="text" name="logradouro" value="Rua Exemplo" required>
                 </div>
                 <div class="form-group">
                     <label>Número</label>
-                    <input type="text" th:field="*{numero}" required>
+                    <input type="text" name="numero" value="123" required>
                 </div>
                 <div class="form-group">
                     <label>Bairro</label>
-                    <input type="text" th:field="*{bairro}" required>
+                    <input type="text" name="bairro" value="Bairro Exemplo" required>
                 </div>
                 <div class="form-group">
                     <label>Cidade</label>
-                    <input type="text" th:field="*{cidade}" required>
+                    <input type="text" name="cidade" value="Cidade Exemplo" required>
                 </div>
                 <div class="form-group">
                     <label>Estado</label>
-                    <select th:field="*{estado}" required>
+                    <select name="estado" required>
                         <option value="">Selecione um estado</option>
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
@@ -221,11 +215,11 @@
                 </div>
                 <div class="form-group">
                     <label>Complemento</label>
-                    <input type="text" th:field="*{complemento}">
+                    <input type="text" name="complemento" value="Apt. 101">
                 </div>
                 <div class="form-group">
                     <label>Gênero</label>
-                    <select th:field="*{gender}" required>
+                    <select name="gender" required>
                         <option value="">Selecione</option>
                         <option value="M">Masculino</option>
                         <option value="F">Feminino</option>
@@ -233,7 +227,7 @@
                 </div>
                 <div class="form-group">
                     <label>Identidade Racial</label>
-                    <select th:field="*{racialIdentity}" required>
+                    <select name="racialIdentity" required>
                         <option value="">Selecione</option>
                         <option value="BRANCO">Branco</option>
                         <option value="PARDO">Pardo</option>
@@ -244,7 +238,7 @@
                 </div>
                 <div class="btn-group">
                     <button type="submit" class="btn btn-primary">Salvar Alterações</button>
-                    <a th:href="@{/list}" class="btn btn-secondary">Voltar à Lista</a>
+                    <a href="./list.html" class="btn btn-secondary">Voltar à Lista</a>
                 </div>
             </form>
         </div>
